@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Covid dans le monde</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Covid dans le monde</h1>
+  <table class="sortable">
+    <tr>
+      <th>Pays</th>
+      <th>Cas confirmés</th>
+      <th>Cas actifs</th>
+      <th>Déces</th>
+      <th>Guéris</th>
+      <th>Date de mise à jour</th>
+    </tr>
+    {%- for pays in result %}
+      <tr>
+          <td>{{ pays.country.capitalize() }}</td>
+          <td>{{ pays.confirmed }}</td>
+          <td>{{ pays.active }}</td>
+          <td>{{ pays.deaths }}</td>
+          <td>{{ pays.recovered }}</td>
+          <td>{{ pays.last_update }}</td>
+      </tr>
+    {%- endfor %}
+  </table>
+  <script src="{{ url_for('static', filename='sorttable.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Covid pour {{ name }}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Covid pour {{ name }}</h1>
+  <ul>
+      <li>Nombre de cas confirmé : {{ result.confirmed }}</li>
+      <li>Nombre de cas actifs : {{ result.active }}</li>
+      <li>Nombre de décés : {{ result.deaths }}</li>
+      <li>Nombre de guérisons : {{ result.recovered }}</li>
+      <li>Date de mise à jour : {{ result.last_update }}</li>
+  </ul>
+</body>
+</html>

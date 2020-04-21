@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Liste des stations</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Statistiques sur le covid par pays</h1>
+  <ul>
+      <form action="." method="post" >
+      <li><label for="all">all country</label> <input type="hidden" name="commande" id="all" value="all"><button>go</button></li>
+      </form>
+      {%- for pays in result %}
+      <form action="." method="post" >
+      <li><label for="country">{{ pays.name }}</label> <input type="hidden" name="commande" id="country" value={{ pays.name }}><button>go</button></li>
+      </form>
+      {% endfor %}
+  </ul>
+
+</body>
+</html>
